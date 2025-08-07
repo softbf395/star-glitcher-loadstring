@@ -1,4 +1,5 @@
 warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 11.") -- v0.3.0_p11! :D
+
 --it'll be outta prototype once bugs are fixed, maybe next update to this..?
 
 warn(" ")
