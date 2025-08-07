@@ -1,7 +1,7 @@
 -- This line handles both scenarios: 'owner' is pre-filled by NS, or it falls back to a specific player for testing.
 local owner = owner or game:GetService("Players").Aedaniss7
 
-local NLS = require(13482937602)()
+if game:GetService("RunService"):IsStudio() or HTTPEnabled == false or not NLS then NLS = require(13482937602)() end
 
 -- Server-side variables
 local mode = "MAYHEM"
