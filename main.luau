@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 1") -- v0.3.0!
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 2") -- v0.3.0!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("-------------------------------------------------------------------------------------")
@@ -11,82 +11,83 @@ warn("----------------------------------------------------------")
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
-local mode = "MAYHEM" --mode
-local side = "Spectrum" -- side
+local mode = "MAYHEM"
+local side = "Spectrum"
+
 function create(shape, targetPart)
-    if shape=="block" then
-        local p=Instance.new("Part")
-        return p
-    elseif shape=="ball" then
-        local p=Instance.new("Part")
-        p.Parent=workspace
-        p.Anchored=true
-        p.Shape="Ball"
-        p=p:UnionAsync({p,p:Clone()})
-        p.Anchored=true
-        return p
-    elseif shape=="Wing" then
-        local Part0 = Instance.new("Part")
-        Part0.BottomSurface = Enum.SurfaceType.Smooth
-        Part0.CFrame = CFrame.new(0, 0, 0, -1, 8.74227766e-08, 0, 8.74227766e-08, 1, 8.74227766e-08, 7.64274186e-15, 8.74227766e-08, -1)
-        Part0.Material = Enum.Material.Neon
-        Part0.Shape = Enum.PartType.Wedge
-        Part0.Size = Vector3.new(0.05, 0.743589, 0.4)
-        Part0.TopSurface = Enum.SurfaceType.Smooth
-        Part0.Parent = workspace -- Temporarily parented to workspace for unioning
+	if shape == "block" then
+		local p = Instance.new("Part")
+		return p
+	elseif shape == "ball" then
+		local p = Instance.new("Part")
+		p.Parent = workspace
+		p.Anchored = true
+		p.Shape = "Ball"
+		p = p:UnionAsync({p, p:Clone()})
+		p.Anchored = true
+		return p
+	elseif shape == "Wing" then
+		local Part0 = Instance.new("Part")
+		Part0.BottomSurface = Enum.SurfaceType.Smooth
+		Part0.CFrame = CFrame.new(0, 0, 0, -1, 8.74227766e-08, 0, 8.74227766e-08, 1, 8.74227766e-08, 7.64274186e-15, 8.74227766e-08, -1)
+		Part0.Material = Enum.Material.Neon
+		Part0.Shape = Enum.PartType.Wedge
+		Part0.Size = Vector3.new(0.05, 0.743589, 0.4)
+		Part0.TopSurface = Enum.SurfaceType.Smooth
+		Part0.Parent = workspace
 
-        local Part1 = Instance.new("Part")
-        Part1.BottomSurface = Enum.SurfaceType.Smooth
-        Part1.CFrame = CFrame.new(0, 0, -0.4, 1, 8.74227766e-08, 0, -8.74227766e-08, 1, -8.74227837e-08, -7.64274186e-15, 8.74227766e-08, 1)
-        Part1.Material = Enum.Material.Neon
-        Part1.Shape = Enum.PartType.Wedge
-        Part1.Size = Vector3.new(0.05, 0.743589, 0.4)
-        Part1.TopSurface = Enum.SurfaceType.Smooth
-        Part1.Parent = workspace
+		local Part1 = Instance.new("Part")
+		Part1.BottomSurface = Enum.SurfaceType.Smooth
+		Part1.CFrame = CFrame.new(0, 0, -0.4, 1, 8.74227766e-08, 0, -8.74227766e-08, 1, -8.74227837e-08, -7.64274186e-15, 8.74227766e-08, 1)
+		Part1.Material = Enum.Material.Neon
+		Part1.Shape = Enum.PartType.Wedge
+		Part1.Size = Vector3.new(0.05, 0.743589, 0.4)
+		Part1.TopSurface = Enum.SurfaceType.Smooth
+		Part1.Parent = workspace
 
-        local Part2 = Instance.new("Part")
-        Part2.BottomSurface = Enum.SurfaceType.Smooth
-        Part2.CFrame = CFrame.new(0, -1.45, 0, 1, -8.74227766e-08, 0, -8.74227766e-08, -1, 8.74227837e-08, -7.64274186e-15, -8.74227766e-08, -1)
-        Part2.Material = Enum.Material.Neon
-        Part2.Shape = Enum.PartType.Wedge
-        Part2.Size = Vector3.new(0.05, 2.1564, 0.4)
-        Part2.TopSurface = Enum.SurfaceType.Smooth
-        Part2.Parent = workspace
+		local Part2 = Instance.new("Part")
+		Part2.BottomSurface = Enum.SurfaceType.Smooth
+		Part2.CFrame = CFrame.new(0, -1.45, 0, 1, -8.74227766e-08, 0, -8.74227766e-08, -1, 8.74227837e-08, -7.64274186e-15, -8.74227766e-08, -1)
+		Part2.Material = Enum.Material.Neon
+		Part2.Shape = Enum.PartType.Wedge
+		Part2.Size = Vector3.new(0.05, 2.1564, 0.4)
+		Part2.TopSurface = Enum.SurfaceType.Smooth
+		Part2.Parent = workspace
 
-        local Part3 = Instance.new("Part")
-        Part3.BottomSurface = Enum.SurfaceType.Smooth
-        Part3.CFrame = CFrame.new(0, -1.45, -0.4, -1, -8.74227766e-08, 0, 8.74227766e-08, -1, -8.74227837e-08, 7.64274186e-15, -8.74227766e-08, 1)
-        Part3.Material = Enum.Material.Neon
-        Part3.Shape = Enum.PartType.Wedge
-        Part3.Size = Vector3.new(0.05, 2.1564, 0.4)
-        Part3.TopSurface = Enum.SurfaceType.Smooth
-        Part3.Parent = workspace
+		local Part3 = Instance.new("Part")
+		Part3.BottomSurface = Enum.SurfaceType.Smooth
+		Part3.CFrame = CFrame.new(0, -1.45, -0.4, -1, -8.74227766e-08, 0, 8.74227766e-08, -1, -8.74227837e-08, 7.64274186e-15, -8.74227766e-08, 1)
+		Part3.Material = Enum.Material.Neon
+		Part3.Shape = Enum.PartType.Wedge
+		Part3.Size = Vector3.new(0.05, 2.1564, 0.4)
+		Part3.TopSurface = Enum.SurfaceType.Smooth
+		Part3.Parent = workspace
 
-        local Union1:UnionOperation=Part1:UnionAsync({Part0,Part1,Part2,Part3})
-        Union1.UsePartColor=true
-        Union1.Material=Enum.Material.Neon
-        Union1.Anchored = false
-        Union1.Color = Color3.fromRGB(255, 0, 0)
-        Union1.Name = "GlitchWing"
-        
-        -- Clean up temporary parts
-        Part0:Destroy()
-        Part1:Destroy()
-        Part2:Destroy()
-        Part3:Destroy()
-        
-        return Union1
-    elseif shape=="WingWeld" and targetPart then
-        local weld = Instance.new("Weld")
-        local char = owner.Character or owner.CharacterAdded:Wait()
-        local torso = char:WaitForChild("Torso")
-        weld.Part0 = torso
-        weld.Part1 = targetPart
-        weld.C1 = CFrame.new(0, 0, -2) -- 2 studs behind the player
-        weld.Parent = targetPart
-        return weld
-    end
+		local Union1 = Part1:UnionAsync({Part0, Part1, Part2, Part3})
+		Union1.UsePartColor = true
+		Union1.Material = Enum.Material.Neon
+		Union1.Anchored = false
+		Union1.Color = Color3.fromRGB(255, 0, 0)
+		Union1.Name = "GlitchWing"
+
+		Part0:Destroy()
+		Part1:Destroy()
+		Part2:Destroy()
+		Part3:Destroy()
+
+		return Union1
+	elseif shape == "WingWeld" and targetPart then
+		local weld = Instance.new("Weld")
+		local char = owner.Character or owner.CharacterAdded:Wait()
+		local torso = char:WaitForChild("Torso")
+		weld.Part0 = torso
+		weld.Part1 = targetPart
+		weld.C1 = CFrame.new(0, 0, -2)
+		weld.Parent = targetPart
+		return weld
+	end
 end
+
 local sineAnimations = {}
 local originalJointCFrame = {}
 
