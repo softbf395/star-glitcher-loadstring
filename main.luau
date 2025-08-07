@@ -53,7 +53,17 @@ for _, p in ipairs(Players:GetPlayers()) do
 end
 
 Players.PlayerAdded:Connect(setupPlayer)
-
+local title=Instance.new("TextLabel")
+local sguiTitle=Instance.new("BillboardGui", owner.Character.Head)
+sguiTitle.Size=UDim2.new(3,0,1.5,0)
+sgui.StudsOffsetWorldSpace=Vector3.new(0,3,0)
+title.Parent=sguiTitle
+title.BackgroundTransparency=1
+title.Size=UDim2.new(1,0,1,0)
+title.TextScaled=true
+title.TextColor3.new(1,0,0)
+title.Font="Arcade"
+title.Text=mode
 -- Connect the server-side RemoteEvent handler
 rm.OnServerEvent:Connect(function(plr, input, params)
     -- Check for the correct player
@@ -68,7 +78,11 @@ rm.OnServerEvent:Connect(function(plr, input, params)
             if mode == "MAYHEM" then
                 mode = "SUBLIMINAL"
                 side = "SUBLIMINAL"
+title.TextColor3=Color3.new(1,1,1)
+title.Text="SUBLIMINAL"
             else
+title.TextColor3=Color3.new(1,0,0)
+title.Text="MAYHEM"
                 mode = "MAYHEM"
                 side = "Spectrum"
                     say("THIS CANT BE HAPPENING.")
