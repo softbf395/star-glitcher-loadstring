@@ -1,3 +1,4 @@
+--v0.1
 local owner = owner or game:GetService("Players").Aedaniss7 -- owner placeholder just in case.
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
@@ -56,7 +57,7 @@ Players.PlayerAdded:Connect(setupPlayer)
 local title=Instance.new("TextLabel")
 local sguiTitle=Instance.new("BillboardGui", owner.Character.Head)
 sguiTitle.Size=UDim2.new(3,0,1.5,0)
-sgui.StudsOffsetWorldSpace=Vector3.new(0,3,0)
+sguiTitle.StudsOffsetWorldSpace=Vector3.new(0,3,0) --fix, again
 title.Parent=sguiTitle
 title.BackgroundTransparency=1
 title.Size=UDim2.new(1,0,1,0)
