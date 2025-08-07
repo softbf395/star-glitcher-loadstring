@@ -1,7 +1,7 @@
 -- This line handles both scenarios: 'owner' is pre-filled by NS, or it falls back to a specific player for testing.
 local owner = owner or game:GetService("Players").Aedaniss7
-
-if game:GetService("RunService"):IsStudio() or HTTPEnabled == false or not NLS then NLS = require(13482937602)() end
+local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end)
+if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
 -- Server-side variables
 local mode = "MAYHEM"
