@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 02") -- v0.2.2!
+warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 03") -- v0.2.2!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
@@ -114,6 +114,7 @@ title.Text="MAYHEM"
             if mode == "MAYHEM" then
                 mode = "VIOLENCE"
                 say("I AM REALLY DONE WITH YOU...")
+                    mode="VIOLENCE_TRANSFORM"
                 task.wait(2)
                 local sphere=create("ball")
                     local ts=game.TweenService
@@ -149,14 +150,30 @@ title.Text="MAYHEM"
                     game.Debris:AddItem(sphere,1)
                     sphere.Parent=workspace
                 task.wait(1)
-                    mode="MAYHEM"
-                say("nvm, its unfinished.")
+title.TextColor3=Color3.fromRGB(111,0,0)
+title.Text="VI0LENCE"
+                    mode="VIOLENCE"
+                   -- mode="MAYHEM"
+               -- say("nvm, its unfinished.")
             end
         end
         if key==Enum.KeyCode.Z then
             if mode=="MAYHEM" then
                     say("SHATTER!")
                     say("unfinished")
+            end
+            if mode=="VIOLENCE" then
+                say("Should i have taken it easier..?")
+                local circlePart=create("block")
+                local decal=Instance.new("Decal", circlePart)
+                decal.Surface="Top"
+                decal.Texture="rbxassetid://93223598603073"
+                circlePart.Anchored=true
+                circlePart.Size=Vector3.new(10,0.3,10)
+                circlePart.Transparency=1
+                circlePart.Position=owner.Character.Torso.Position-Vector3.new(0,3,0)
+                wait(3)
+                circlePart:Destroy()
             end
         end
       warn(mode)
