@@ -121,6 +121,7 @@ targetPart=targetPart or nil
 end
 
 local sineAnimations = {}
+
 local originalJointCFrame = {}
 
 function Animate(part: Part, minX, minY, minZ, RminX, RminY, RminZ, maxX, maxY, maxZ, RmaxX, RmaxY, RmaxZ, sineR, sineX)
