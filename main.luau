@@ -29,6 +29,7 @@ local chatClientCode = [[
     ReplicatedStorage.SGSay.OnClientEvent:Connect(function(text, sender, mode)
         TextChatService:FindFirstChild("TextChannels").RBXSystem:ShowSystemMessage("["..mode.."] "..sender..": "..text)
     end)
+warn("Chat Client Code initialized.")
 ]]
 
 local inputClientCode = [[
@@ -38,6 +39,7 @@ local inputClientCode = [[
         if isTyping then return end
         ReplicatedStorage.SGInput:FireServer("Key", {input.KeyCode})
     end)
+warn("Controls code initialized.")
 ]]
 
 -- Function to handle code injection for players
@@ -62,7 +64,7 @@ Players.PlayerAdded:Connect(setupPlayer)
 -- Connect the server-side RemoteEvent handler
 rm.OnServerEvent:Connect(function(plr, input, params)
     -- Check for the correct player
-    if plr ~= owner then
+    if plr.Name ~= owner.Name then
         warn("Unauthorized attempt to control Star Glitcher by "..plr.Name)
         return
     end
@@ -89,6 +91,6 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                 mode = "MAYHEM"
             end
         end
-      print(mode)
+      warn(mode)
     end
 end)
