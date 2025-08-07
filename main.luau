@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 1") --version (0.1.1)
+warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 2") --version (0.1.2)
 warn(" ")
 warn("THIS IS A REMADE. you will need edit access in the game you use this in.") --saying this is a remake
 local owner = owner or game:GetService("Players").Aedaniss7 -- owner placeholder just in case.
