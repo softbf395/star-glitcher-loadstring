@@ -22,7 +22,6 @@ local function say(text)
     rm2:FireAllClients(text, owner.Name, mode)
 end
 
--- Client-side code to be injected
 local chatClientCode = [[
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local TextChatService = game:GetService("TextChatService")
