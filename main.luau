@@ -1,5 +1,5 @@
 warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 7") -- v0.3.0_p7! :D
---itll be outta prototype once bugs are fixed, maybe next update to this?
+--itll be outta prototype once bugs are fixed, maybe next update to this..?
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
