@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.1") --version (0.1)
+warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 1") --version (0.1.1)
 warn(" ")
 warn("THIS IS A REMADE. you will need edit access in the game you use this in.") --saying this is a remake
 local owner = owner or game:GetService("Players").Aedaniss7 -- owner placeholder just in case.
@@ -64,7 +64,7 @@ title.Parent=sguiTitle
 title.BackgroundTransparency=1
 title.Size=UDim2.new(1,0,1,0)
 title.TextScaled=true
-title.TextColor3.new(1,0,0)
+title.TextColor3=Color3.new(1,0,0)
 title.Font="Arcade"
 title.Text=mode
 -- Connect the server-side RemoteEvent handler
@@ -81,10 +81,10 @@ rm.OnServerEvent:Connect(function(plr, input, params)
             if mode == "MAYHEM" then
                 mode = "SUBLIMINAL"
                 side = "SUBLIMINAL"
-title.TextColor3=Color3.new(1,1,1)
+title.TextColor3=Color3.fromRGB(255,255,255)
 title.Text="SUBLIMINAL"
             else
-title.TextColor3=Color3.new(1,0,0)
+title.TextColor3=Color3.fromRGB(255,0,0)
 title.Text="MAYHEM"
                 mode = "MAYHEM"
                 side = "Spectrum"
