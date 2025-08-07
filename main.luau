@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )
+warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 02") -- version ( 0.2.2 ).
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
 warn("----------------------------------------------------------")
@@ -121,7 +121,7 @@ title.Text="MAYHEM"
                     sphere.CanCollide=false
                     sphere.Color=Color3.fromRGB(255,0,0)
                     sphere.Size=Vector3.new(0,0,0)
-                    sphere.Position=owner
+                    sphere.Position=owner.Character.Torso.Position
                     sphere.Material="Neon"
                     ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(20,20,20),Transparency=1}):Play()
                     game.Debris:AddItem(sphere,1)
@@ -132,7 +132,7 @@ title.Text="MAYHEM"
                     sphere.CanCollide=false
                     sphere.Color=Color3.fromRGB(255,0,0)
                     sphere.Size=Vector3.new(0,0,0)
-                    sphere.Position=owner
+                    sphere.Position=owner.Character.Torso.Position
                     sphere.Material="Neon"
                     ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(20,20,20),Transparency=1}):Play()
                     game.Debris:AddItem(sphere,1)
@@ -143,7 +143,7 @@ title.Text="MAYHEM"
                     sphere.CanCollide=false
                     sphere.Color=Color3.fromRGB(255,0,0)
                     sphere.Size=Vector3.new(0,0,0)
-                    sphere.Position=owner
+                    sphere.Position=owner.Character.Torso.Position
                     sphere.Material="Neon"
                     ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(70,70,70),Transparency=1}):Play()
                     game.Debris:AddItem(sphere,1)
