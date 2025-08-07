@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.2") -- version ( 0.2 )!
+warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
 warn("----------------------------------------------------------")
@@ -18,8 +18,11 @@ function create(shape)
         return p
     elseif shape=="ball" then
         local p=Instance.new("Part")
+        p.Parent=workspace
+        p.Anchored=true
         p.Shape="Ball"
         p=p:UnionAsync({p,p:Clone()})
+        p.Anchored=true
         return p
     end
 end
