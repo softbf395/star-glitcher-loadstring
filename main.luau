@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 3") -- v0.3.0!
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 4") -- v0.3.0!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("-------------------------------------------------------------------------------------")
@@ -272,6 +272,7 @@ local function removeWings(owner)
         end
     end
 end
+addWings(owner)
 for i=4,6 do
     leftWings[i].Transparency=1
 end
@@ -283,7 +284,6 @@ Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,5,10)
 Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,5,10)
 initTitleGui()
 say("THIS CANT BE HAPPENING.")
-addWings(owner)
 -- Connect the server-side RemoteEvent handler
 rm.OnServerEvent:Connect(function(plr, input, params)
     -- Check for the correct player
