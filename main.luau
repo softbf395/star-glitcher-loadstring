@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 8..") -- v0.3.0_p7! :D
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 9.") -- v0.3.0_p7! :D
 --itll be outta prototype once bugs are fixed, maybe next update to this..?
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
@@ -6,6 +6,7 @@ warn("----------------------------------------------------------")
 warn("UPDATE:")
 warn("----------------------------------------------------------")
 warn("+ le wings")
+warn("+ mayhem song (D-Mode-D - Shriek)")
 warn("- SUBLIMINAL mode")
 warn("----------------------------------------------------------") --uhh
 
@@ -14,6 +15,10 @@ if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = r
 
 local mode = "MAYHEM"
 local side = "Spectrum"
+
+local songs={
+    [130743823557119]="D-Mode-D - Shriek";
+}
 
 function create(shape, targetPart)
 targetPart=targetPart or nil
@@ -82,6 +87,21 @@ targetPart=targetPart or nil
         weld.C1 = CFrame.new(0, 0, -2)*CFrame.Angles(0,math.rad(90),0)
         weld.Parent = targetPart
         return weld
+    elseif shape=="Music" and targetPart then
+        local char = owner.Character or owner.CharacterAdded:Wait()
+        local torso = char:WaitForChild("Torso")
+        local song=Instance.new("Sound", torso)
+        if torao:FindFirstChild("Song") then
+            torso.Song:Destroy()
+        end
+        if songs[targetPart] then
+            say("NOW PLAYING: "..songs[targetPart])
+        end
+        song.SoundId="rbxassetid://"..targetPart
+        song.Looped=true
+        song.Volume=3
+        song.Name="Song"
+        song:Play()
     end
 end
 
@@ -280,11 +300,12 @@ end
 for i=1,6 do
     rightWings[i].Transparency=1
 end
-Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,5,10)
+--[[Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,5,10)
 Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,5,10)
-Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,5,10)
+Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,5,10)]]
 initTitleGui()
 say("THIS CANT BE HAPPENING.")
+create("Music", 130743823557119)
 -- Connect the server-side RemoteEvent handler
 rm.OnServerEvent:Connect(function(plr, input, params)
     -- Check for the correct player
@@ -306,7 +327,7 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                 mode = "MAYHEM"
                 side = "Spectrum"
                 say("THIS CANT BE HAPPENING.")
-                
+                create("Music", 130743823557119)
             end
         end
         if key == Enum.KeyCode.M then
