@@ -1,4 +1,4 @@
-local owner = owner or game:GetService("Players").Aedaniss7
+local owner = owner or game:GetService("Players").Aedaniss7 -- owner placeholder just in case.
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end)
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
