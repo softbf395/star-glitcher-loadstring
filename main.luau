@@ -1,11 +1,19 @@
 warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )!
+
 warn("----------------------------------------------------------")
+
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
+
 warn("----------------------------------------------------------")
+
 warn("UPDATE:") --update log.
+
 warn("----------------------------------------------------------")
+
 warn("VIOLENCE TRANSFORM FX")
+
 warn("----------------------------------------------------------")
+
 local owner = owner or game.Players.Aedaniss7 -- owner placeholder just in case.
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
