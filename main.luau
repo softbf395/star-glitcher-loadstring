@@ -64,7 +64,7 @@ title.Parent=sguiTitle
 title.BackgroundTransparency=1
 title.Size=UDim2.new(1,0,1,0)
 title.TextScaled=true
-title.TextColor3=Color3.new(1,0,0)
+title.TextColor3=Color3.fromRGB(255,0,0)
 title.Font="Arcade"
 title.Text=mode
 -- Connect the server-side RemoteEvent handler
