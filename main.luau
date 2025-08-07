@@ -1,16 +1,12 @@
-
 local owner = owner or game:GetService("Players").Aedaniss7
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end)
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
-
 local mode = "MAYHEM"
 local side = "Spectrum" -- Note: 'side' is not used in this script.
 
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
-
 
 local rm = Instance.new("RemoteEvent", ReplicatedStorage)
 rm.Name = "SGInput"
@@ -56,7 +52,6 @@ for _, p in ipairs(Players:GetPlayers()) do
     setupPlayer(p)
 end
 
--- Inject the code for new players who join the game
 Players.PlayerAdded:Connect(setupPlayer)
 
 -- Connect the server-side RemoteEvent handler
