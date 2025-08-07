@@ -1,17 +1,17 @@
--- This line handles both scenarios: 'owner' is pre-filled by NS, or it falls back to a specific player for testing.
+
 local owner = owner or game:GetService("Players").Aedaniss7
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end)
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
--- Server-side variables
+
 local mode = "MAYHEM"
 local side = "Spectrum" -- Note: 'side' is not used in this script.
 
--- Get services
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
--- Create RemoteEvents in ReplicatedStorage
+
 local rm = Instance.new("RemoteEvent", ReplicatedStorage)
 rm.Name = "SGInput"
 local rm2 = Instance.new("RemoteEvent", ReplicatedStorage)
@@ -40,7 +40,7 @@ local inputClientCode = [[
 warn("Controls code initialized.")
 ]]
 
--- Function to handle code injection for players
+
 local function setupPlayer(player)
     -- Inject the chat handler for ALL players into their PlayerGui.
     NLS(chatClientCode, player.PlayerGui)
