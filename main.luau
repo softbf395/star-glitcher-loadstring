@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 6") -- v0.3.0_p6!
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 6") -- v0.3.0_p6! :D
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
