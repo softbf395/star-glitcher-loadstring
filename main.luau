@@ -1,8 +1,8 @@
 warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 02") -- version 0.2.2
 warn("----------------------------------------------------------")
-warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
+warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
-warn("UPDATE:") --update log.
+warn("UPDATE:")
 warn("----------------------------------------------------------")
 warn("VIOLENCE TRANSFORM FX")
 warn("----------------------------------------------------------")
