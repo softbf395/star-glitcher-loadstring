@@ -25,7 +25,7 @@ local chatClientCode = [[
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local TextChatService = game:GetService("TextChatService")
     ReplicatedStorage.SGSay.OnClientEvent:Connect(function(text, sender, mode)
-        TextChatService:FindFirstChild("TextChannels").RBXSystem:ShowSystemMessage("["..mode.."] "..sender..": "..text)
+        TextChatService:FindFirstChild("TextChannels").RBXSystem:DisplaySystemMessage("["..mode.."] "..sender..": "..text) -- fixed <-
     end)
 warn("Chat Client Code initialized.")
 ]]
