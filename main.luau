@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 02") -- version 0.2.2
+warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 02") -- version 0.2.2!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
