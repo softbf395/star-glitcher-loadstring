@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 9.") -- v0.3.0_p7! :D
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 10.") -- v0.3.0_p7! :D
 --itll be outta prototype once bugs are fixed, maybe next update to this..?
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
@@ -91,7 +91,7 @@ targetPart=targetPart or nil
         local char = owner.Character or owner.CharacterAdded:Wait()
         local torso = char:WaitForChild("Torso")
         local song=Instance.new("Sound", torso)
-        if torao:FindFirstChild("Song") then
+        if torso:FindFirstChild("Song") then
             torso.Song:Destroy()
         end
         if songs[targetPart] then
