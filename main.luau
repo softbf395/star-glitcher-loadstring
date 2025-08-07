@@ -1,5 +1,5 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 6") -- v0.3.0_p6 :D
---itll be outta prototype once bugs are fixed
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 7") -- v0.3.0_p7 :D
+--itll be outta prototype once bugs are fixed, maybe next update to this?
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
@@ -88,7 +88,7 @@ end
 local sineAnimations = {}
 local originalJointCFrame = {}
 
-function Animate(part: Part, owner: Player, minX, minY, minZ, RminX, RminY, RminZ, maxX, maxY, maxZ, RmaxX, RmaxY, RmaxZ, sineR, sineX)
+function Animate(part: Part, minX, minY, minZ, RminX, RminY, RminZ, maxX, maxY, maxZ, RmaxX, RmaxY, RmaxZ, sineR, sineX)
     -- Stop any existing animation on this part before starting a new one
     if sineAnimations[part] then
         sineAnimations[part] = nil
@@ -279,9 +279,9 @@ end
 for i=1,6 do
     rightWings[i].Transparency=1
 end
-Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,0,5,10)
-Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,0,5,10)
-Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,0,5,10)
+Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,5,10)
+Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,5,10)
+Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,5,10)
 initTitleGui()
 say("THIS CANT BE HAPPENING.")
 -- Connect the server-side RemoteEvent handler
