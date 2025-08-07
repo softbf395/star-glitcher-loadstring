@@ -2,7 +2,7 @@ local owner = owner or game:GetService("Players").Aedaniss7 -- owner placeholder
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
 if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = require(13482937602)() end --http enabled? if yes then dont run require for NLS and use NS's built in version
 
-local mode = "MAYHEM"
+local mode = "MAYHEM" --mode
 local side = "Spectrum" -- Note: 'side' is not used in this script.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
