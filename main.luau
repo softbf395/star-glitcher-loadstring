@@ -68,11 +68,10 @@ rm.OnServerEvent:Connect(function(plr, input, params)
             if mode == "MAYHEM" then
                 mode = "SUBLIMINAL"
                 side = "SUBLIMINAL"
-                say("Mode changed to SUBLIMINAL.")
             else
                 mode = "MAYHEM"
                 side = "Spectrum"
-                say("Mode changed to MAYHEM.")
+                    say("THIS CANT BE HAPPENING.")
             end
         end
         if key == Enum.KeyCode.M then
@@ -80,8 +79,14 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                 mode = "VIOLENCE"
                 say("I AM REALLY DONE WITH YOU...")
                 task.wait(1)
+                    mode="MAYHEM"
                 say("nvm, its unfinished.")
-                mode = "MAYHEM"
+            end
+        end
+        if key==Enum.KeyCode.Z then
+            if mode=="MAYHEM" then
+                    say("SHATTER!")
+                    say("unfinished")
             end
         end
       warn(mode)
