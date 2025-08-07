@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 5") -- v0.3.0_p5!
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 6") -- v0.3.0_p6!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
@@ -78,7 +78,7 @@ targetPart=targetPart or nil
         local torso = char:WaitForChild("Torso")
         weld.Part0 = torso
         weld.Part1 = targetPart
-        weld.C1 = CFrame.new(0, 0, -2)
+        weld.C1 = CFrame.new(0, 0, -2)*CFrame.Angles(0,math.rad(90),0)
         weld.Parent = targetPart
         return weld
     end
@@ -95,14 +95,14 @@ function Animate(part: Part, owner: Player, minX, minY, minZ, RminX, RminY, Rmin
 
     -- Find an existing Motor6D or Weld within the character's descendants that connects to 'part'.
     local m6dOrWeld: Motor6D|Weld
-    if owner.Character then
+    --if owner.Character then
         for _, joint in ipairs(owner.Character:GetDescendants()) do
             if (joint:IsA("Motor6D") or joint:IsA("Weld")) and joint.Part1 == part then
                 m6dOrWeld = joint
                 break
             end
         end
-    end
+    --end
 
     -- If no existing joint was found, create a new Motor6D as a fallback.
     if not m6dOrWeld and part.Parent then
@@ -278,9 +278,9 @@ end
 for i=1,6 do
     rightWings[i].Transparency=1
 end
-Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,5,10)
-Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,5,10)
-Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,5,10)
+Animate(leftWings[1], -1,0,0,0,0,0,-1,-0.5,0,0,15,0,0,5,10)
+Animate(leftWings[2], -2,0,0,0,0,0,-2,-0.5,-0.5,0,25,0,0,5,10)
+Animate(leftWings[3], -3,0,0,0,0,0,-3,-0.5,-1,0,45,0,0,5,10)
 initTitleGui()
 say("THIS CANT BE HAPPENING.")
 -- Connect the server-side RemoteEvent handler
