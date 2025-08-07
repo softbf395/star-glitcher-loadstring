@@ -17,7 +17,6 @@ rm.Name = "SGInput"
 local rm2 = Instance.new("RemoteEvent", ReplicatedStorage)
 rm2.Name = "SGSay"
 
--- Define the 'say' function
 local function say(text)
     rm2:FireAllClients(text, owner.Name, mode)
 end
