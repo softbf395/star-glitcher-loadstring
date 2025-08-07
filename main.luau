@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 7") -- v0.3.0_p7! :D
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 8..") -- v0.3.0_p7! :D
 --itll be outta prototype once bugs are fixed, maybe next update to this..?
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
@@ -89,6 +89,7 @@ local sineAnimations = {}
 local originalJointCFrame = {}
 
 function Animate(part: Part, minX, minY, minZ, RminX, RminY, RminZ, maxX, maxY, maxZ, RmaxX, RmaxY, RmaxZ, sineR, sineX)
+local char = owner.Character or owner.CharacterAdded:Wait()
     -- Stop any existing animation on this part before starting a new one
     if sineAnimations[part] then
         sineAnimations[part] = nil
@@ -97,7 +98,7 @@ function Animate(part: Part, minX, minY, minZ, RminX, RminY, RminZ, maxX, maxY, 
     -- Find an existing Motor6D or Weld within the character's descendants that connects to 'part'.
     local m6dOrWeld: Motor6D|Weld
     --if owner.Character then
-        for _, joint in ipairs(owner.Character:GetDescendants()) do
+        for _, joint in ipairs(char:GetDescendants()) do
             if (joint:IsA("Motor6D") or joint:IsA("Weld")) and joint.Part1 == part then
                 m6dOrWeld = joint
                 break
@@ -172,9 +173,9 @@ end
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
-local rm = Instance.new("RemoteEvent", ReplicatedStorage)
+local rm = ReplicatedStorage:FindFirstChild("SGInput") or Instance.new("RemoteEvent", ReplicatedStorage)
 rm.Name = "SGInput"
-local rm2 = Instance.new("RemoteEvent", ReplicatedStorage)
+local rm2 = ReplicatedStorage:FindFirstChild("SGSay") or Instance.new("RemoteEvent", ReplicatedStorage)
 rm2.Name = "SGSay"
 
 local function say(text)
