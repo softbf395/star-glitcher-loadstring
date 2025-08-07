@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )!
+warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )
 
 warn("----------------------------------------------------------")
 
