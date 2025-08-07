@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 4") -- v0.3.0_p4!
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 5") -- v0.3.0_p5!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
 warn("----------------------------------------------------------")
@@ -15,6 +15,7 @@ local mode = "MAYHEM"
 local side = "Spectrum"
 
 function create(shape, targetPart)
+targetPart=targetPart or nil
     if shape == "block" then
         local p = Instance.new("Part")
         return p
@@ -69,11 +70,6 @@ function create(shape, targetPart)
         Union1.Anchored = false
         Union1.Color = Color3.fromRGB(255, 0, 0)
         Union1.Name = "GlitchWing"
-
-        Part0:Destroy()
-        Part1:Destroy()
-        Part2:Destroy()
-        Part3:Destroy()
 
         return Union1
     elseif shape == "WingWeld" and targetPart then
@@ -241,26 +237,27 @@ local function initTitleGui()
     title.Text=mode
 end
 local Col=Color3.fromRGB(255,0,0)
-    local leftWings={}
-    local rightWings={}
-local function addWings(owner)
+local function addWings()
+local lWing={}
+local rWing={}
     local char = owner.Character or owner.CharacterAdded:Wait()
     if not char then return end
 
     for i=1,6 do
-        leftWings[i]=create("Wing")
-        local wing=leftWings[i]
+        lWing[i]=create("Wing")
+        local wing=lWing[i]
         wing.Color=Col
         wing.Parent=char
         create("WingWeld", wing)
     end
     for i=1,6 do
-        rightWings[i]=create("Wing")
-        local wing=leftWings[i]
+        rWing[i]=create("Wing")
+        local wing=rWing[i]
         wing.Color=Col
         wing.Parent=char
         create("WingWeld", wing)
     end
+return {lWing,rWing}
 end
 
 local function removeWings(owner)
@@ -272,7 +269,9 @@ local function removeWings(owner)
         end
     end
 end
-addWings(owner)
+local uhh=addWings()
+local leftWings=uhh[1]
+local rightWings=uhh[2]
 for i=4,6 do
     leftWings[i].Transparency=1
 end
