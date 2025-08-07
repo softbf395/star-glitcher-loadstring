@@ -2,7 +2,7 @@ warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 3") -- version ( 0.1.3 )!
 warn(" ")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
 warn(" ")
-warn("UPDATE:")
+warn("UPDATE:") --upd log
 warn("FIXED THE BUG WHERE INITIALIZATION BUGS.")
 local owner = owner or game.Players.Aedaniss7 -- owner placeholder just in case.
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
