@@ -1,19 +1,26 @@
 warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 11.") -- v0.3.0_p11! :D
 --it'll be outta prototype once bugs are fixed, maybe next update to this..?
+
 warn(" ")
 warn("----------------------------------------------------------")
 warn(" ")
+
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.")
+
 warn(" ")
 warn("----------------------------------------------------------")
 warn(" ")
+
 warn("UPDATE:")
+
 warn(" ")
 warn("----------------------------------------------------------")
 warn(" ")
+
 warn("+ le wings")
 warn("+ mayhem song (D-Mode-D - Shriek)")
-warn("- SUBLIMINAL mode")
+warn("- SUBLIMINAL mode"
+)
 warn(" ")
 warn("----------------------------------------------------------") --uhh
 
