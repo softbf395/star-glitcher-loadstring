@@ -1,10 +1,10 @@
-warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 3") -- version ( 0.1.3 )!
+warn("STAR GLITCHER NS LOADSTRING V0.2") -- version ( 0.2 )!
 warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
 warn("----------------------------------------------------------")
 warn("UPDATE:") --update log.
 warn("----------------------------------------------------------")
-warn("FIXED THE BUG WHERE INITIALIZATION BUGS.")
+warn("VIOLENCE TRANSFORM FX")
 warn("----------------------------------------------------------")
 local owner = owner or game.Players.Aedaniss7 -- owner placeholder just in case.
 local HTTPEnabled = pcall(function() game:GetService("HttpService"):GetAsync("https://httpbin.org/get") end) --self-explanetory
@@ -12,7 +12,17 @@ if game:GetService("RunService"):IsStudio() or HTTPEnabled == false then NLS = r
 
 local mode = "MAYHEM" --mode
 local side = "Spectrum" -- side
-
+function create(shape)
+    if shape=="block" then
+        local p=Instance.new("Part")
+        return p
+    elseif shape=="ball" then
+        local p=Instance.new("Part")
+        p.Shape="Ball"
+        p=p:UnionAsync({p,p:Clone()})
+        return p
+    end
+end
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
@@ -100,6 +110,40 @@ title.Text="MAYHEM"
             if mode == "MAYHEM" then
                 mode = "VIOLENCE"
                 say("I AM REALLY DONE WITH YOU...")
+                task.wait(2)
+                local sphere=create("ball")
+                    local ts=game.TweenService
+                    sphere.Anchored=true
+                    sphere.CanCollide=false
+                    sphere.Color=Color3.fromRGB(255,0,0)
+                    sphere.Size=Vector3.new(0,0,0)
+                    sphere.Position=owner
+                    sphere.Material="Neon"
+                    ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(20,20,20),Transparency=1}):Play()
+                    game.Debris:AddItem(sphere,1)
+                    task.wait(1)
+                    local sphere=create("ball")
+                    local ts=game.TweenService
+                    sphere.Anchored=true
+                    sphere.CanCollide=false
+                    sphere.Color=Color3.fromRGB(255,0,0)
+                    sphere.Size=Vector3.new(0,0,0)
+                    sphere.Position=owner
+                    sphere.Material="Neon"
+                    ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(20,20,20),Transparency=1}):Play()
+                    game.Debris:AddItem(sphere,1)
+                    task.wait(0.5)
+                    local sphere=create("ball")
+                    local ts=game.TweenService
+                    sphere.Anchored=true
+                    sphere.CanCollide=false
+                    sphere.Color=Color3.fromRGB(255,0,0)
+                    sphere.Size=Vector3.new(0,0,0)
+                    sphere.Position=owner
+                    sphere.Material="Neon"
+                    ts:Create(sphere,TweenInfo.new(1),{Size=Vector3.new(70,70,70),Transparency=1}):Play()
+                    game.Debris:AddItem(sphere,1)
+                    sphere.Parent=workspace
                 task.wait(1)
                     mode="MAYHEM"
                 say("nvm, its unfinished.")
