@@ -1,7 +1,7 @@
 warn("STAR GLITCHER NS LOADSTRING V0.1 BUGFIX 3") -- version ( 0.1.3 )!
-warn(" ")
+warn("----------------------------------------------------------")
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
-warn(" ")
+warn("----------------------------------------------------------")
 warn("UPDATE:") --update log.
 warn("----------------------------------------------------------")
 warn("FIXED THE BUG WHERE INITIALIZATION BUGS.")
