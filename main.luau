@@ -1,17 +1,10 @@
 warn("STAR GLITCHER NS LOADSTRING V0.2 FIX 01") -- version ( 0.2.1 )
-
 warn("----------------------------------------------------------")
-
 warn("THIS IS A REMAKE of Star Glitcher. you will need edit access to the game you use this in.") --saying this is a remake
-
 warn("----------------------------------------------------------")
-
 warn("UPDATE:") --update log.
-
 warn("----------------------------------------------------------")
-
 warn("VIOLENCE TRANSFORM FX")
-
 warn("----------------------------------------------------------")
 
 local owner = owner or game.Players.Aedaniss7 -- owner placeholder just in case.
