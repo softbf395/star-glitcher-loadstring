@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 12.") -- v0.3.0_p12
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 12.") -- v0.3.0_p12!!
 
 -- it'll be outta prototype once bugs are fixed, maybe next update to this..?
 
@@ -234,7 +234,7 @@ workspace.SGFX.OnClientEvent:Connect(function(fx,p)
         local camera=workspace.CurrentCamera
         function getInt() return math.random(-p.In,p.In) end
         for i=1,p.Loops do
-            camera.CFrame*=CFrame.angles(getInt(),getInt(),getInt())
+            camera.CFrame=camera.CFrame*CFrame.angles(getInt(),getInt(),getInt())
             task.wait(p.Time/p.Loops)
         end
     end
