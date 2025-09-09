@@ -1,4 +1,4 @@
-warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 11.") -- v0.3.0_p11
+warn("STAR GLITCHER NS LOADSTRING V0.3 prototype 12.") -- v0.3.0_p12
 
 -- it'll be outta prototype once bugs are fixed, maybe next update to this..?
 
@@ -39,6 +39,7 @@ function create(shape, targetPart)
 targetPart=targetPart or nil
     if shape == "block" then
         local p = Instance.new("Part")
+        p.Anchored=true
         return p
     elseif shape == "ball" then
         local p = Instance.new("Part")
@@ -46,6 +47,7 @@ targetPart=targetPart or nil
         p.Anchored = true
         p.Shape = "Ball"
         p = p:UnionAsync({p, p:Clone()})
+        p.UsePartColor=true
         p.Anchored = true
         return p
     elseif shape == "Wing" then
@@ -217,7 +219,8 @@ rm2.Name = "SGSay"
  function say(text)
     rm2:FireAllClients(text, owner.Name, mode)
 end
-
+local fx=Instance.new("RemoteEvent", workspace)
+fx.Name="SGFX"
 local chatClientCode = [[
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local TextChatService = game:GetService("TextChatService")
@@ -225,6 +228,18 @@ local chatClientCode = [[
         TextChatService:FindFirstChild("TextChannels").RBXSystem:DisplaySystemMessage("["..mode.."] "..sender..": "..text) -- fixed <-
     end)
 warn("Chat Client Code initialized.")
+
+workspace.SGFX.OnClientEvent:Connect(function(fx,p)
+    if fx=="CS" then
+        local camera=workspace.CurrentCamera
+        function getInt() return math.random(-p.In,p.In) end
+        for i=1,p.Loops do
+            camera.CFrame*=CFrame.angles(getInt(),getInt(),getInt())
+            task.wait(p.Time/p.Loops)
+        end
+    end
+end)
+print("Initialized SGFXClient")
 ]]
 
 local inputClientCode = [[
@@ -357,6 +372,7 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                     local torso = ownerChar:WaitForChild("Torso")
                     
                     local sphere=create("ball")
+fx:FireAllClients("CS",{In=3,Time=1,Loops=25})
                     sphere.Anchored=true
                     sphere.CanCollide=false
                     sphere.Color=Color3.fromRGB(255,0,0)
@@ -369,6 +385,7 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                     task.wait(1)
                     
                     local sphere2=create("ball")
+fx:FireAllClients("CS",{In=3,Time=1,Loops=25})
                     sphere2.Anchored=true
                     sphere2.CanCollide=false
                     sphere2.Color=Color3.fromRGB(255,0,0)
@@ -381,6 +398,7 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                     task.wait(0.5)
                     
                     local sphere3=create("ball")
+fx:FireAllClients("CS",{In=8,Time=3,Loops=75})
                     sphere3.Anchored=true
                     sphere3.CanCollide=false
                     sphere3.Color=Color3.fromRGB(255,0,0)
@@ -417,7 +435,7 @@ rm.OnServerEvent:Connect(function(plr, input, params)
                 circlePart.Anchored=true
                 circlePart.Size=Vector3.new(10,0.3,10)
                 circlePart.Transparency=1
-                circlePart.Position=owner.Character.Torso.Position-Vector3.new(0,3,0)
+                circlePart.Position=owner.Character.Torso.Position-Vector3.new(0,1,0)
                 wait(3)
                 circlePart:Destroy()
             end
